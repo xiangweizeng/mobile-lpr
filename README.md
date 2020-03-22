@@ -18,7 +18,7 @@ Mobile-LPR 是一个面向移动端的准商业级车牌识别库，以NCNN作�
 ## 构建及安装
 1. 下载源码
 ```sh
-git clone 
+git clone https://github.com/xiangweizeng/mobile-lpr.git
 ```
 2. 准备环境
 - 安装opencv4.0及以上， freetype库
@@ -152,6 +152,7 @@ void test_quantize_mtcnn_plate(){
 - 优化模型，支持更多的车牌类型，目前支持普通车牌识别，欢迎各位大神提供更好的模型
 - 优化模型，更高的精度
 - 添加Android 使用实例
+- 性能评估
 
 ## 参考
 1. [light-LPR](https://github.com/lqian/light-LPR) 本项目的模型大部分来自与此
