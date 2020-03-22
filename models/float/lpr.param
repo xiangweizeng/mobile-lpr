@@ -1,0 +1,44 @@
+7767517
+42 48
+Input            input 0 1 data 0=128 1=32 2=3
+Convolution      conv1 1 1 data conv1_relu 0=64 1=5 2=1 3=2 4=2 5=1 6=4800 9=1
+Pooling          pool1 1 1 conv1_relu pool1 0=0 1=3 2=2 3=0 4=0 5=0
+Split            pool1_split1 1 2 pool1 pool1_split_0 pool1_split_1
+Convolution      res2a_branch1 1 1 pool1_split_0 scale2a_branch1 0=64 1=1 2=1 3=1 4=0 5=1 6=4096 9=0
+Convolution      res2a_branch2a 1 1 pool1_split_1 res2a_branch2a_relu 0=32 1=3 2=1 3=1 4=1 5=1 6=18432 9=1
+Convolution      res2a_branch2b 1 1 res2a_branch2a_relu scale2a_branch2b 0=64 1=3 2=1 3=1 4=1 5=1 6=18432 9=0
+Eltwise          res2a 2 1 scale2a_branch1 scale2a_branch2b res2a 0=1
+ReLU             res2a_relu 1 1 res2a res2a_relu 0=0.000000
+Split            res2a_relu_split15 1 2 res2a_relu res2a_relu_split_1 res2a_relu_split_0
+Convolution      res2b_branch2a 1 1 res2a_relu_split_0 res2b_branch2a_relu 0=32 1=3 2=1 3=1 4=1 5=1 6=18432 9=1
+Convolution      res2b_branch2b 1 1 res2b_branch2a_relu scale2b_branch2b 0=64 1=3 2=1 3=1 4=1 5=1 6=18432 9=0
+Eltwise          res2b 2 1 res2a_relu_split_1 scale2b_branch2b res2b 0=1
+ReLU             res2b_relu 1 1 res2b res2b_relu 0=0.000000
+Split            res2b_relu_split18 1 2 res2b_relu res2b_relu_split_0 res2b_relu_split_1
+Convolution      res3a_branch1 1 1 res2b_relu_split_0 scale3a_branch1 0=64 1=1 2=1 3=2 4=0 5=1 6=4096 9=0
+Convolution      res3a_branch2a 1 1 res2b_relu_split_1 res3a_branch2a_relu 0=32 1=3 2=1 3=2 4=1 5=1 6=18432 9=1
+Convolution      res3a_branch2b 1 1 res3a_branch2a_relu scale3a_branch2b 0=64 1=3 2=1 3=1 4=1 5=1 6=18432 9=0
+Eltwise          res3a 2 1 scale3a_branch1 scale3a_branch2b res3a 0=1
+ReLU             res3a_relu 1 1 res3a res3a_relu 0=0.000000
+Split            res3a_relu_split22 1 2 res3a_relu res3a_relu_split_1 res3a_relu_split_0
+Convolution      res3b_branch2a 1 1 res3a_relu_split_0 res3b_branch2a_relu 0=64 1=3 2=1 3=1 4=1 5=1 6=36864 9=1
+Convolution      res3b_branch2b 1 1 res3b_branch2a_relu scale3b_branch2b 0=64 1=3 2=1 3=1 4=1 5=1 6=36864 9=0
+Eltwise          res3b 2 1 res3a_relu_split_1 scale3b_branch2b res3b 0=1
+ReLU             res3b_relu 1 1 res3b res3b_relu 0=0.000000
+Split            res3b_relu_split25 1 2 res3b_relu res3b_relu_split_0 res3b_relu_split_1
+Convolution      res4a_branch1 1 1 res3b_relu_split_0 scale4a_branch1 0=128 1=1 2=1 3=1 4=0 5=1 6=8192 9=0
+Convolution      res4a_branch2a 1 1 res3b_relu_split_1 res4a_branch2a_relu 0=64 1=3 2=1 3=1 4=1 5=1 6=36864 9=1
+Convolution      res4a_branch2b 1 1 res4a_branch2a_relu scale4a_branch2b 0=128 1=3 2=1 3=1 4=1 5=1 6=73728 9=0
+Eltwise          res4a 2 1 scale4a_branch1 scale4a_branch2b res4a 0=1
+ReLU             res4a_relu 1 1 res4a res4a_relu 0=0.000000
+Split            res4a_relu_split29 1 2 res4a_relu res4a_relu_split_1 res4a_relu_split_0
+Convolution      res4b_branch2a 1 1 res4a_relu_split_0 res4b_branch2a_relu 0=64 1=3 2=1 3=1 4=1 5=1 6=73728 9=1
+Convolution      res4b_branch2b 1 1 res4b_branch2a_relu scale4b_branch2b 0=128 1=3 2=1 3=1 4=1 5=1 6=73728 9=0
+Eltwise          res4b 2 1 res4a_relu_split_1 scale4b_branch2b res4b 0=1
+ReLU             res4b_relu 1 1 res4b res4b_relu 0=0.000000
+Pooling          pool5_ave 1 1 res4b_relu pool5_ave 0=1 1=1 11=4 2=1 3=0 4=0 5=0
+Permute          pool5_ave_transpose 1 1 pool5_ave pool5_ave_transpose 0=5
+Reshape          ____reshape____fc1x 1 1 pool5_ave_transpose ____reshape____fc1x 0=1 1=-1 2=0
+Permute          ___permute1______reshape____fc1x 1 1 ____reshape____fc1x ___permute1______reshape____fc1x 0=3
+Convolution      fc1x 1 1 ___permute1______reshape____fc1x ___permute2______reshape____fc1x 0=79 1=1 2=1 3=1 4=0 5=1 6=10112 9=0
+Permute          ___permute2______reshape____fc1x 1 1 ___permute2______reshape____fc1x fc1x 0=4

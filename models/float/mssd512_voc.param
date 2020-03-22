@@ -1,0 +1,129 @@
+7767517
+127 150
+Input            data             0 1 data 0=512 1=512 2=3
+Split            splitncnn_0      1 7 data data_splitncnn_0 data_splitncnn_1 data_splitncnn_2 data_splitncnn_3 data_splitncnn_4 data_splitncnn_5 data_splitncnn_6
+Convolution      ssd0_mobilenet0_conv0 1 1 data_splitncnn_6 ssd0_mobilenet0_conv0 0=8 1=3 2=1 3=2 4=1 5=1 6=216
+ReLU             ssd0_mobilenet0_batchnorm0/relu 1 1 ssd0_mobilenet0_conv0 ssd0_mobilenet0_conv0_ssd0_mobilenet0_batchnorm0/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv1 1 1 ssd0_mobilenet0_conv0_ssd0_mobilenet0_batchnorm0/relu ssd0_mobilenet0_conv1 0=8 1=3 2=1 3=1 4=1 5=1 6=72 7=8
+ReLU             ssd0_mobilenet0_batchnorm1/relu 1 1 ssd0_mobilenet0_conv1 ssd0_mobilenet0_conv1_ssd0_mobilenet0_batchnorm1/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv2 1 1 ssd0_mobilenet0_conv1_ssd0_mobilenet0_batchnorm1/relu ssd0_mobilenet0_conv2 0=16 1=1 2=1 3=1 4=0 5=1 6=128
+ReLU             ssd0_mobilenet0_batchnorm2/relu 1 1 ssd0_mobilenet0_conv2 ssd0_mobilenet0_conv2_ssd0_mobilenet0_batchnorm2/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv3 1 1 ssd0_mobilenet0_conv2_ssd0_mobilenet0_batchnorm2/relu ssd0_mobilenet0_conv3 0=16 1=3 2=1 3=2 4=1 5=1 6=144 7=16
+ReLU             ssd0_mobilenet0_batchnorm3/relu 1 1 ssd0_mobilenet0_conv3 ssd0_mobilenet0_conv3_ssd0_mobilenet0_batchnorm3/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv4 1 1 ssd0_mobilenet0_conv3_ssd0_mobilenet0_batchnorm3/relu ssd0_mobilenet0_conv4 0=32 1=1 2=1 3=1 4=0 5=1 6=512
+ReLU             ssd0_mobilenet0_batchnorm4/relu 1 1 ssd0_mobilenet0_conv4 ssd0_mobilenet0_conv4_ssd0_mobilenet0_batchnorm4/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv5 1 1 ssd0_mobilenet0_conv4_ssd0_mobilenet0_batchnorm4/relu ssd0_mobilenet0_conv5 0=32 1=3 2=1 3=1 4=1 5=1 6=288 7=32
+ReLU             ssd0_mobilenet0_batchnorm5/relu 1 1 ssd0_mobilenet0_conv5 ssd0_mobilenet0_conv5_ssd0_mobilenet0_batchnorm5/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv6 1 1 ssd0_mobilenet0_conv5_ssd0_mobilenet0_batchnorm5/relu ssd0_mobilenet0_conv6 0=32 1=1 2=1 3=1 4=0 5=1 6=1024
+ReLU             ssd0_mobilenet0_batchnorm6/relu 1 1 ssd0_mobilenet0_conv6 ssd0_mobilenet0_conv6_ssd0_mobilenet0_batchnorm6/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv7 1 1 ssd0_mobilenet0_conv6_ssd0_mobilenet0_batchnorm6/relu ssd0_mobilenet0_conv7 0=32 1=3 2=1 3=2 4=1 5=1 6=288 7=32
+ReLU             ssd0_mobilenet0_batchnorm7/relu 1 1 ssd0_mobilenet0_conv7 ssd0_mobilenet0_conv7_ssd0_mobilenet0_batchnorm7/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv8 1 1 ssd0_mobilenet0_conv7_ssd0_mobilenet0_batchnorm7/relu ssd0_mobilenet0_conv8 0=64 1=1 2=1 3=1 4=0 5=1 6=2048
+ReLU             ssd0_mobilenet0_batchnorm8/relu 1 1 ssd0_mobilenet0_conv8 ssd0_mobilenet0_conv8_ssd0_mobilenet0_batchnorm8/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv9 1 1 ssd0_mobilenet0_conv8_ssd0_mobilenet0_batchnorm8/relu ssd0_mobilenet0_conv9 0=64 1=3 2=1 3=1 4=1 5=1 6=576 7=64
+ReLU             ssd0_mobilenet0_batchnorm9/relu 1 1 ssd0_mobilenet0_conv9 ssd0_mobilenet0_conv9_ssd0_mobilenet0_batchnorm9/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv10 1 1 ssd0_mobilenet0_conv9_ssd0_mobilenet0_batchnorm9/relu ssd0_mobilenet0_conv10 0=64 1=1 2=1 3=1 4=0 5=1 6=4096
+ReLU             ssd0_mobilenet0_batchnorm10/relu 1 1 ssd0_mobilenet0_conv10 ssd0_mobilenet0_conv10_ssd0_mobilenet0_batchnorm10/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv11 1 1 ssd0_mobilenet0_conv10_ssd0_mobilenet0_batchnorm10/relu ssd0_mobilenet0_conv11 0=64 1=3 2=1 3=2 4=1 5=1 6=576 7=64
+ReLU             ssd0_mobilenet0_batchnorm11/relu 1 1 ssd0_mobilenet0_conv11 ssd0_mobilenet0_conv11_ssd0_mobilenet0_batchnorm11/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv12 1 1 ssd0_mobilenet0_conv11_ssd0_mobilenet0_batchnorm11/relu ssd0_mobilenet0_conv12 0=128 1=1 2=1 3=1 4=0 5=1 6=8192
+ReLU             ssd0_mobilenet0_batchnorm12/relu 1 1 ssd0_mobilenet0_conv12 ssd0_mobilenet0_conv12_ssd0_mobilenet0_batchnorm12/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv13 1 1 ssd0_mobilenet0_conv12_ssd0_mobilenet0_batchnorm12/relu ssd0_mobilenet0_conv13 0=128 1=3 2=1 3=1 4=1 5=1 6=1152 7=128
+ReLU             ssd0_mobilenet0_batchnorm13/relu 1 1 ssd0_mobilenet0_conv13 ssd0_mobilenet0_conv13_ssd0_mobilenet0_batchnorm13/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv14 1 1 ssd0_mobilenet0_conv13_ssd0_mobilenet0_batchnorm13/relu ssd0_mobilenet0_conv14 0=128 1=1 2=1 3=1 4=0 5=1 6=16384
+ReLU             ssd0_mobilenet0_batchnorm14/relu 1 1 ssd0_mobilenet0_conv14 ssd0_mobilenet0_conv14_ssd0_mobilenet0_batchnorm14/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv15 1 1 ssd0_mobilenet0_conv14_ssd0_mobilenet0_batchnorm14/relu ssd0_mobilenet0_conv15 0=128 1=3 2=1 3=1 4=1 5=1 6=1152 7=128
+ReLU             ssd0_mobilenet0_batchnorm15/relu 1 1 ssd0_mobilenet0_conv15 ssd0_mobilenet0_conv15_ssd0_mobilenet0_batchnorm15/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv16 1 1 ssd0_mobilenet0_conv15_ssd0_mobilenet0_batchnorm15/relu ssd0_mobilenet0_conv16 0=128 1=1 2=1 3=1 4=0 5=1 6=16384
+ReLU             ssd0_mobilenet0_batchnorm16/relu 1 1 ssd0_mobilenet0_conv16 ssd0_mobilenet0_conv16_ssd0_mobilenet0_batchnorm16/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv17 1 1 ssd0_mobilenet0_conv16_ssd0_mobilenet0_batchnorm16/relu ssd0_mobilenet0_conv17 0=128 1=3 2=1 3=1 4=1 5=1 6=1152 7=128
+ReLU             ssd0_mobilenet0_batchnorm17/relu 1 1 ssd0_mobilenet0_conv17 ssd0_mobilenet0_conv17_ssd0_mobilenet0_batchnorm17/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv18 1 1 ssd0_mobilenet0_conv17_ssd0_mobilenet0_batchnorm17/relu ssd0_mobilenet0_conv18 0=128 1=1 2=1 3=1 4=0 5=1 6=16384
+ReLU             ssd0_mobilenet0_batchnorm18/relu 1 1 ssd0_mobilenet0_conv18 ssd0_mobilenet0_conv18_ssd0_mobilenet0_batchnorm18/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv19 1 1 ssd0_mobilenet0_conv18_ssd0_mobilenet0_batchnorm18/relu ssd0_mobilenet0_conv19 0=128 1=3 2=1 3=1 4=1 5=1 6=1152 7=128
+ReLU             ssd0_mobilenet0_batchnorm19/relu 1 1 ssd0_mobilenet0_conv19 ssd0_mobilenet0_conv19_ssd0_mobilenet0_batchnorm19/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv20 1 1 ssd0_mobilenet0_conv19_ssd0_mobilenet0_batchnorm19/relu ssd0_mobilenet0_conv20 0=128 1=1 2=1 3=1 4=0 5=1 6=16384
+ReLU             ssd0_mobilenet0_batchnorm20/relu 1 1 ssd0_mobilenet0_conv20 ssd0_mobilenet0_conv20_ssd0_mobilenet0_batchnorm20/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv21 1 1 ssd0_mobilenet0_conv20_ssd0_mobilenet0_batchnorm20/relu ssd0_mobilenet0_conv21 0=128 1=3 2=1 3=1 4=1 5=1 6=1152 7=128
+ReLU             ssd0_mobilenet0_batchnorm21/relu 1 1 ssd0_mobilenet0_conv21 ssd0_mobilenet0_conv21_ssd0_mobilenet0_batchnorm21/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv22 1 1 ssd0_mobilenet0_conv21_ssd0_mobilenet0_batchnorm21/relu ssd0_mobilenet0_conv22 0=128 1=1 2=1 3=1 4=0 5=1 6=16384
+ReLU             ssd0_mobilenet0_batchnorm22/relu 1 1 ssd0_mobilenet0_conv22 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu 0=0.000000e+00
+Split            splitncnn_1      1 4 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu_splitncnn_0 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu_splitncnn_1 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu_splitncnn_2 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu_splitncnn_3
+Convolution      ssd0_convpredictor1_conv0 1 1 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu_splitncnn_3 ssd0_convpredictor1_conv0 0=12 1=3 2=1 3=1 4=1 5=1 6=13824
+Permute          ssd0_transpose6  1 1 ssd0_convpredictor1_conv0 ssd0_transpose6 0=3
+Flatten          ssd0_flatten6    1 1 ssd0_transpose6 ssd0_flatten6
+ConvolutionDepthWise ssd0_mobilenet0_conv23 1 1 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu_splitncnn_2 ssd0_mobilenet0_conv23 0=128 1=3 2=1 3=2 4=1 5=1 6=1152 7=128
+ReLU             ssd0_mobilenet0_batchnorm23/relu 1 1 ssd0_mobilenet0_conv23 ssd0_mobilenet0_conv23_ssd0_mobilenet0_batchnorm23/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv24 1 1 ssd0_mobilenet0_conv23_ssd0_mobilenet0_batchnorm23/relu ssd0_mobilenet0_conv24 0=256 1=1 2=1 3=1 4=0 5=1 6=32768
+ReLU             ssd0_mobilenet0_batchnorm24/relu 1 1 ssd0_mobilenet0_conv24 ssd0_mobilenet0_conv24_ssd0_mobilenet0_batchnorm24/relu 0=0.000000e+00
+ConvolutionDepthWise ssd0_mobilenet0_conv25 1 1 ssd0_mobilenet0_conv24_ssd0_mobilenet0_batchnorm24/relu ssd0_mobilenet0_conv25 0=256 1=3 2=1 3=1 4=1 5=1 6=2304 7=256
+ReLU             ssd0_mobilenet0_batchnorm25/relu 1 1 ssd0_mobilenet0_conv25 ssd0_mobilenet0_conv25_ssd0_mobilenet0_batchnorm25/relu 0=0.000000e+00
+Convolution      ssd0_mobilenet0_conv26 1 1 ssd0_mobilenet0_conv25_ssd0_mobilenet0_batchnorm25/relu ssd0_mobilenet0_conv26 0=256 1=1 2=1 3=1 4=0 5=1 6=65536
+ReLU             ssd0_mobilenet0_batchnorm26/relu 1 1 ssd0_mobilenet0_conv26 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu 0=0.000000e+00
+Split            splitncnn_2      1 4 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu_splitncnn_0 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu_splitncnn_1 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu_splitncnn_2 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu_splitncnn_3
+Convolution      ssd0_convpredictor3_conv0 1 1 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu_splitncnn_3 ssd0_convpredictor3_conv0 0=16 1=3 2=1 3=1 4=1 5=1 6=36864
+Permute          ssd0_transpose7  1 1 ssd0_convpredictor3_conv0 ssd0_transpose7 0=3
+Flatten          ssd0_flatten7    1 1 ssd0_transpose7 ssd0_flatten7
+Convolution      ssd0_expand_trans_conv0 1 1 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu_splitncnn_2 ssd0_expand_trans_conv0 0=128 1=1 2=1 3=1 4=1 5=1 6=32768
+ReLU             ssd0_expand_trans_bn0/relu 1 1 ssd0_expand_trans_conv0 ssd0_expand_trans_conv0_ssd0_expand_trans_bn0/relu 0=0.000000e+00
+Convolution      ssd0_expand_conv0 1 1 ssd0_expand_trans_conv0_ssd0_expand_trans_bn0/relu ssd0_expand_conv0 0=128 1=3 2=1 3=2 4=1 5=1 6=147456
+ReLU             ssd0_expand_bn0/relu 1 1 ssd0_expand_conv0 ssd0_expand_conv0_ssd0_expand_bn0/relu 0=0.000000e+00
+Split            splitncnn_3      1 4 ssd0_expand_conv0_ssd0_expand_bn0/relu ssd0_expand_conv0_ssd0_expand_bn0/relu_splitncnn_0 ssd0_expand_conv0_ssd0_expand_bn0/relu_splitncnn_1 ssd0_expand_conv0_ssd0_expand_bn0/relu_splitncnn_2 ssd0_expand_conv0_ssd0_expand_bn0/relu_splitncnn_3
+Convolution      ssd0_convpredictor5_conv0 1 1 ssd0_expand_conv0_ssd0_expand_bn0/relu_splitncnn_3 ssd0_convpredictor5_conv0 0=16 1=3 2=1 3=1 4=1 5=1 6=18432
+Permute          ssd0_transpose8  1 1 ssd0_convpredictor5_conv0 ssd0_transpose8 0=3
+Flatten          ssd0_flatten8    1 1 ssd0_transpose8 ssd0_flatten8
+Convolution      ssd0_expand_trans_conv1 1 1 ssd0_expand_conv0_ssd0_expand_bn0/relu_splitncnn_2 ssd0_expand_trans_conv1 0=128 1=1 2=1 3=1 4=1 5=1 6=16384
+ReLU             ssd0_expand_trans_bn1/relu 1 1 ssd0_expand_trans_conv1 ssd0_expand_trans_conv1_ssd0_expand_trans_bn1/relu 0=0.000000e+00
+Convolution      ssd0_expand_conv1 1 1 ssd0_expand_trans_conv1_ssd0_expand_trans_bn1/relu ssd0_expand_conv1 0=128 1=3 2=1 3=2 4=1 5=1 6=147456
+ReLU             ssd0_expand_bn1/relu 1 1 ssd0_expand_conv1 ssd0_expand_conv1_ssd0_expand_bn1/relu 0=0.000000e+00
+Split            splitncnn_4      1 4 ssd0_expand_conv1_ssd0_expand_bn1/relu ssd0_expand_conv1_ssd0_expand_bn1/relu_splitncnn_0 ssd0_expand_conv1_ssd0_expand_bn1/relu_splitncnn_1 ssd0_expand_conv1_ssd0_expand_bn1/relu_splitncnn_2 ssd0_expand_conv1_ssd0_expand_bn1/relu_splitncnn_3
+Convolution      ssd0_convpredictor7_conv0 1 1 ssd0_expand_conv1_ssd0_expand_bn1/relu_splitncnn_3 ssd0_convpredictor7_conv0 0=16 1=3 2=1 3=1 4=1 5=1 6=18432
+Permute          ssd0_transpose9  1 1 ssd0_convpredictor7_conv0 ssd0_transpose9 0=3
+Flatten          ssd0_flatten9    1 1 ssd0_transpose9 ssd0_flatten9
+Convolution      ssd0_expand_trans_conv2 1 1 ssd0_expand_conv1_ssd0_expand_bn1/relu_splitncnn_2 ssd0_expand_trans_conv2 0=128 1=1 2=1 3=1 4=1 5=1 6=16384
+ReLU             ssd0_expand_trans_bn2/relu 1 1 ssd0_expand_trans_conv2 ssd0_expand_trans_conv2_ssd0_expand_trans_bn2/relu 0=0.000000e+00
+Convolution      ssd0_expand_conv2 1 1 ssd0_expand_trans_conv2_ssd0_expand_trans_bn2/relu ssd0_expand_conv2 0=64 1=3 2=1 3=2 4=1 5=1 6=73728
+ReLU             ssd0_expand_bn2/relu 1 1 ssd0_expand_conv2 ssd0_expand_conv2_ssd0_expand_bn2/relu 0=0.000000e+00
+Split            splitncnn_5      1 4 ssd0_expand_conv2_ssd0_expand_bn2/relu ssd0_expand_conv2_ssd0_expand_bn2/relu_splitncnn_0 ssd0_expand_conv2_ssd0_expand_bn2/relu_splitncnn_1 ssd0_expand_conv2_ssd0_expand_bn2/relu_splitncnn_2 ssd0_expand_conv2_ssd0_expand_bn2/relu_splitncnn_3
+Convolution      ssd0_convpredictor9_conv0 1 1 ssd0_expand_conv2_ssd0_expand_bn2/relu_splitncnn_3 ssd0_convpredictor9_conv0 0=12 1=3 2=1 3=1 4=1 5=1 6=6912
+Permute          ssd0_transpose10 1 1 ssd0_convpredictor9_conv0 ssd0_transpose10 0=3
+Flatten          ssd0_flatten10   1 1 ssd0_transpose10 ssd0_flatten10
+Convolution      ssd0_expand_trans_conv3 1 1 ssd0_expand_conv2_ssd0_expand_bn2/relu_splitncnn_2 ssd0_expand_trans_conv3 0=128 1=1 2=1 3=1 4=1 5=1 6=8192
+ReLU             ssd0_expand_trans_bn3/relu 1 1 ssd0_expand_trans_conv3 ssd0_expand_trans_conv3_ssd0_expand_trans_bn3/relu 0=0.000000e+00
+Convolution      ssd0_expand_conv3 1 1 ssd0_expand_trans_conv3_ssd0_expand_trans_bn3/relu ssd0_expand_conv3 0=64 1=3 2=1 3=2 4=1 5=1 6=73728
+ReLU             ssd0_expand_bn3/relu 1 1 ssd0_expand_conv3 ssd0_expand_conv3_ssd0_expand_bn3/relu 0=0.000000e+00
+Split            splitncnn_6      1 3 ssd0_expand_conv3_ssd0_expand_bn3/relu ssd0_expand_conv3_ssd0_expand_bn3/relu_splitncnn_0 ssd0_expand_conv3_ssd0_expand_bn3/relu_splitncnn_1 ssd0_expand_conv3_ssd0_expand_bn3/relu_splitncnn_2
+Convolution      ssd0_convpredictor11_conv0 1 1 ssd0_expand_conv3_ssd0_expand_bn3/relu_splitncnn_2 ssd0_convpredictor11_conv0 0=12 1=3 2=1 3=1 4=1 5=1 6=6912
+Permute          ssd0_transpose11 1 1 ssd0_convpredictor11_conv0 ssd0_transpose11 0=3
+Flatten          ssd0_flatten11   1 1 ssd0_transpose11 ssd0_flatten11
+Concat           ssd0_concat1     6 1 ssd0_flatten6 ssd0_flatten7 ssd0_flatten8 ssd0_flatten9 ssd0_flatten10 ssd0_flatten11 ssd0_concat1 0=0
+Convolution      ssd0_convpredictor0_conv0 1 1 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu_splitncnn_1 ssd0_convpredictor0_conv0 0=6 1=3 2=1 3=1 4=1 5=1 6=6912
+Permute          ssd0_transpose0  1 1 ssd0_convpredictor0_conv0 ssd0_transpose0 0=3
+Flatten          ssd0_flatten0    1 1 ssd0_transpose0 ssd0_flatten0
+Convolution      ssd0_convpredictor2_conv0 1 1 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu_splitncnn_1 ssd0_convpredictor2_conv0 0=8 1=3 2=1 3=1 4=1 5=1 6=18432
+Permute          ssd0_transpose1  1 1 ssd0_convpredictor2_conv0 ssd0_transpose1 0=3
+Flatten          ssd0_flatten1    1 1 ssd0_transpose1 ssd0_flatten1
+Convolution      ssd0_convpredictor4_conv0 1 1 ssd0_expand_conv0_ssd0_expand_bn0/relu_splitncnn_1 ssd0_convpredictor4_conv0 0=8 1=3 2=1 3=1 4=1 5=1 6=9216
+Permute          ssd0_transpose2  1 1 ssd0_convpredictor4_conv0 ssd0_transpose2 0=3
+Flatten          ssd0_flatten2    1 1 ssd0_transpose2 ssd0_flatten2
+Convolution      ssd0_convpredictor6_conv0 1 1 ssd0_expand_conv1_ssd0_expand_bn1/relu_splitncnn_1 ssd0_convpredictor6_conv0 0=8 1=3 2=1 3=1 4=1 5=1 6=9216
+Permute          ssd0_transpose3  1 1 ssd0_convpredictor6_conv0 ssd0_transpose3 0=3
+Flatten          ssd0_flatten3    1 1 ssd0_transpose3 ssd0_flatten3
+Convolution      ssd0_convpredictor8_conv0 1 1 ssd0_expand_conv2_ssd0_expand_bn2/relu_splitncnn_1 ssd0_convpredictor8_conv0 0=6 1=3 2=1 3=1 4=1 5=1 6=3456
+Permute          ssd0_transpose4  1 1 ssd0_convpredictor8_conv0 ssd0_transpose4 0=3
+Flatten          ssd0_flatten4    1 1 ssd0_transpose4 ssd0_flatten4
+Convolution      ssd0_convpredictor10_conv0 1 1 ssd0_expand_conv3_ssd0_expand_bn3/relu_splitncnn_1 ssd0_convpredictor10_conv0 0=6 1=3 2=1 3=1 4=1 5=1 6=3456
+Permute          ssd0_transpose5  1 1 ssd0_convpredictor10_conv0 ssd0_transpose5 0=3
+Flatten          ssd0_flatten5    1 1 ssd0_transpose5 ssd0_flatten5
+Concat           ssd0_concat0     6 1 ssd0_flatten0 ssd0_flatten1 ssd0_flatten2 ssd0_flatten3 ssd0_flatten4 ssd0_flatten5 ssd0_concat0 0=0
+Reshape          ssd0_reshape6    1 1 ssd0_concat0 ssd0_reshape6 0=2 1=-1 2=-233 3=0
+Softmax          softmax0         1 1 ssd0_reshape6 softmax0 0=1 1=1
+Flatten          flatten0         1 1 softmax0 flatten0
+PriorBox         ssd0_mobilenet0_relu22_fwd_priorbox 2 1 ssd0_mobilenet0_conv22_ssd0_mobilenet0_batchnorm22/relu_splitncnn_0 data_splitncnn_5 ssd0_mobilenet0_relu22_fwd_priorbox -23300=1,5.120000e+01 -23301=1,1.024000e+02 -23302=1,2.000000e+00 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=0 8=0 9=-233 10=-233 11=-2.330000e+02 12=-2.330000e+02 13=5.000000e-01
+PriorBox         ssd0_mobilenet0_relu26_fwd_priorbox 2 1 ssd0_mobilenet0_conv26_ssd0_mobilenet0_batchnorm26/relu_splitncnn_0 data_splitncnn_4 ssd0_mobilenet0_relu26_fwd_priorbox -23300=1,1.024000e+02 -23301=1,1.894000e+02 -23302=2,2.000000e+00,3.000000e+00 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=0 8=0 9=-233 10=-233 11=-2.330000e+02 12=-2.330000e+02 13=5.000000e-01
+PriorBox         ssd0_expand_reu0_priorbox 2 1 ssd0_expand_conv0_ssd0_expand_bn0/relu_splitncnn_0 data_splitncnn_3 ssd0_expand_reu0_priorbox -23300=1,1.894000e+02 -23301=1,2.764000e+02 -23302=2,2.000000e+00,3.000000e+00 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=0 8=0 9=-233 10=-233 11=-2.330000e+02 12=-2.330000e+02 13=5.000000e-01
+PriorBox         ssd0_expand_reu1_priorbox 2 1 ssd0_expand_conv1_ssd0_expand_bn1/relu_splitncnn_0 data_splitncnn_2 ssd0_expand_reu1_priorbox -23300=1,2.764000e+02 -23301=1,3.635200e+02 -23302=2,2.000000e+00,3.000000e+00 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=0 8=0 9=-233 10=-233 11=-2.330000e+02 12=-2.330000e+02 13=5.000000e-01
+PriorBox         ssd0_expand_reu2_priorbox 2 1 ssd0_expand_conv2_ssd0_expand_bn2/relu_splitncnn_0 data_splitncnn_1 ssd0_expand_reu2_priorbox -23300=1,3.635200e+02 -23301=1,4.506000e+02 -23302=1,2.000000e+00 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=0 8=0 9=-233 10=-233 11=-2.330000e+02 12=-2.330000e+02 13=5.000000e-01
+PriorBox         ssd0_expand_reu3_priorbox 2 1 ssd0_expand_conv3_ssd0_expand_bn3/relu_splitncnn_0 data_splitncnn_0 ssd0_expand_reu3_priorbox -23300=1,4.506000e+02 -23301=1,4.920000e+02 -23302=1,2.000000e+00 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=0 8=0 9=-233 10=-233 11=-2.330000e+02 12=-2.330000e+02 13=5.000000e-01
+Concat           concat0          6 1 ssd0_mobilenet0_relu22_fwd_priorbox ssd0_mobilenet0_relu26_fwd_priorbox ssd0_expand_reu0_priorbox ssd0_expand_reu1_priorbox ssd0_expand_reu2_priorbox ssd0_expand_reu3_priorbox concat0 0=1
+DetectionOutput  detection_out    3 1 ssd0_concat1 flatten0 concat0 detection_out 0=2 1=4.500000e-01 2=400 3=100 4=1.000000e-02
