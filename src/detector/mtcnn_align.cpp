@@ -21,7 +21,11 @@ namespace pr {
         for (int n = 0; n < batch_size; ++n) {
             ObjectBox &box = bbox[n].bbox;
 
-            ncnn::Mat img_t, in;;
+            ncnn::Mat img_t, in;
+            box.xmin = box.xmin < 0 ? 0 : box.xmin;
+	        box.xmax = box.xmax > sample.w ? sample.w : box.xmax;
+	        box.ymin = box.ymin < 0 ? 0 : box.ymin;
+	        box.ymax = box.ymax > sample.h ? sample.h : box.ymax;
             copy_cut_border(sample, img_t, box.ymin, sample.h - box.ymax, box.xmin, sample.w - box.xmax);
             resize_bilinear(img_t, in, width, height);
 
