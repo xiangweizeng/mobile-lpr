@@ -1,5 +1,5 @@
 
-find_package(OpenCV 4.0.0 REQUIRED COMPONENTS core imgcodecs imgproc highgui)
+find_package(OpenCV 3.0.0 REQUIRED COMPONENTS core imgcodecs imgproc highgui)
 
 FIND_PACKAGE( OpenMP REQUIRED)
 if(OPENMP_FOUND)

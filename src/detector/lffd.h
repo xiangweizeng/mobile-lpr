@@ -19,7 +19,7 @@ public:
 	~LFFD();
 
 	int detect(ncnn::Mat& img, std::vector<pr::ObjectBox>& face_lis,int resize_h,int resize_w,
-		float score_threshold = 0.2, float nms_threshold = 0.4, int top_k = 10000,
+		float score_threshold = 0.01, float nms_threshold = 0.5, int top_k = 10000,
 		std::vector<int> skip_scale_branch_list = {});
 
 private:
