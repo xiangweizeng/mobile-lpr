@@ -5,6 +5,8 @@
 # mobile-lpr
 Mobile-LPR 是一个面向移动端的准商业级车牌识别库，以NCNN作为推理后端，使用DNN作为算法核心，支持多种车牌检测算法，支持车牌识别和车牌颜色识别。
 
+Android Demo 见 example/android-example
+
 ## 特点
 
 - 超轻量，核心库只依赖NCNN，并且对模型量化进行支持
@@ -151,7 +153,6 @@ void test_quantize_mtcnn_plate(){
 - 添加更优的算法支持
 - 优化模型，支持更多的车牌类型，目前支持普通车牌识别，欢迎各位大神提供更好的模型
 - 优化模型，更高的精度
-- 添加Android 使用实例
 - 性能评估
 
 ## 参考
